@@ -53,6 +53,13 @@ img {
   display: block;
 }
 
+figure {
+  /* O browser dá a <figure> uma margem nativa (tipicamente 1em 40px) — sem este
+     reset, qualquer <figure> (ex.: dentro de um botão da grelha) fica deslocada
+     ~40px para a direita em vez de ocupar 100% do espaço do elemento-pai. */
+  margin: 0;
+}
+
 a {
   color: inherit;
 }
@@ -60,6 +67,12 @@ a {
 button {
   font-family: inherit;
   cursor: pointer;
+  /* Remove o estilo nativo do botão (Safari/iOS em particular) — sem isto, um
+     <button> com filhos a 100% de largura pode centrar o conteúdo em vez de o
+     esticar, desalinhando-o visualmente do resto do layout. */
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: inherit;
 }
 
 h1, h2, h3, h4 {
