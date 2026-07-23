@@ -357,6 +357,15 @@
   grid-column: span 2;
 }
 
+/* Em ecrãs pequenos (grelha a 2 colunas), um item a ocupar as 2 colunas deixa a
+   coluna ao lado vazia na primeira linha — mantém a grelha uniforme em vez disso. */
+@media (max-width: 639px) {
+  .gallery-item--wide {
+    grid-column: auto;
+    aspect-ratio: 4 / 5;
+  }
+}
+
 /* ---------- Lightbox ---------- */
 .lightbox {
   position: fixed;

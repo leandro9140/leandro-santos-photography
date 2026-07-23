@@ -68,3 +68,11 @@
   --z-nav: 100;
   --z-lightbox: 200;
 }
+
+/* Em ecrãs pequenos, o espaçamento entre secções (pensado para desktop) deixa vazios
+   grandes a mais — aperta o ritmo vertical para caber melhor num telemóvel. */
+@media (max-width: 640px) {
+  :root {
+    --space-section: clamp(3.25rem, 14vw, 4.5rem);
+  }
+}

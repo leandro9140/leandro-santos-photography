@@ -109,7 +109,13 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(13, 13, 12, 0.15) 0%, rgba(13, 13, 12, 0.75) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 12, 0.05) 0%,
+    rgba(13, 13, 12, 0.18) 35%,
+    rgba(13, 13, 12, 0.6) 60%,
+    rgba(13, 13, 12, 0.92) 100%
+  );
 }
 
 .category-tile__media img {
