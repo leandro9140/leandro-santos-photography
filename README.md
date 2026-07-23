@@ -263,9 +263,9 @@ quem pediu para o reduzir.
       `src/data/portfolio.js` com os valores reais.
 - [ ] Substituir `public/images/og-cover.svg` por uma imagem real (`1200×630px`).
 - [ ] Confirmar que `https://www.instagram.com/leandrosantos.photo/` é o URL certo do perfil.
-- [ ] Decidir e comprar um domínio (ex. `leandrosantosphotography.pt`), e atualizar esse
-      domínio em `index.html` (`og:url`, `canonical`), `public/robots.txt` e
-      `public/sitemap.xml`, que atualmente têm um domínio placeholder.
-- [ ] Publicar no Netlify/Vercel e ligar o domínio.
+- [x] Domínio `leandrosantosphotography.com` comprado e ligado via Netlify — já
+      atualizado em `index.html` (`og:url`, `og:image`, `canonical`), `public/robots.txt`
+      e `public/sitemap.xml`.
+- [x] Publicado no Netlify.
 - [ ] Confirmar que o e-mail leandrosantosphotography@hotmail.com está a receber os
       testes do formulário antes de divulgar o site.
