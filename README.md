@@ -168,7 +168,7 @@ endpoint/payload em `src/modules/contactForm.js` pelo formato do Formspree (bast
 ## Imagens e vídeos
 
 As fotos do hero, sobre, categorias, destaques e das 3 galerias de casamento (Sara &
-Roberto, Sandra & Bernardo, Diogo & Letícia) já são **fotos reais**, redimensionadas e
+Roberto, Sara & Ricardo, Diogo & Letícia) já são **fotos reais**, redimensionadas e
 comprimidas para web (ficheiros originais eram fotos de câmara de 5–19 MB cada;
 foram reduzidos para o comprimento máximo adequado a cada uso e convertidos para JPEG
 qualidade 82, ficando entre 80 KB e 400 KB cada). Os vídeos do hero foram convertidos de
@@ -179,9 +179,9 @@ usados em loop, silenciosos, como fundo).
 
 - `public/images/og-cover.svg` — imagem para partilha em redes sociais (Open Graph).
   Substitui por uma imagem real `1200×630px`, formato `.jpg` ou `.png`.
-- `location` e `date` em `src/data/portfolio.js` — estão como "Local a confirmar" / "2025"
-  para os 3 casais (Sara & Roberto, Sandra & Bernardo, Diogo & Letícia). Atualiza com o
-  local e a data reais de cada casamento.
+- `date` em `src/data/portfolio.js` — está como "2025" para todos os casais. `location`
+  também ainda é "Local a confirmar" para Sara & Ricardo e Diogo & Letícia. Atualiza com
+  a data e o local reais de cada casamento.
 
 **Para adicionar mais fotos a um casamento existente ou criar um novo:**
 
@@ -256,11 +256,11 @@ quem pediu para o reduzir.
 
 ## Checklist do que falta fazer manualmente
 
-- [ ] Criar a conta/Access Key no Web3Forms e configurar o `.env` (ver secção acima).
+- [ ] Criar a conta/Access Key no Web3Forms e configurar o `.env` (ver secção acima) —
+      **o formulário ainda não envia e-mails sem isto**.
 - [ ] Reescrever os textos marcados com `<!-- PLACEHOLDER -->` em `index.html`.
-- [ ] Atualizar `src/data/testimonials.js` com testemunhos reais de clientes.
-- [ ] Atualizar `location` e `date` em `src/data/portfolio.js` para os 3 casais
-      (atualmente "Local a confirmar" / "2025").
+- [ ] Atualizar `date` (e `location` de Sara & Ricardo e Diogo & Letícia) em
+      `src/data/portfolio.js` com os valores reais.
 - [ ] Substituir `public/images/og-cover.svg` por uma imagem real (`1200×630px`).
 - [ ] Confirmar que `https://www.instagram.com/leandrosantos.photo/` é o URL certo do perfil.
 - [ ] Decidir e comprar um domínio (ex. `leandrosantosphotography.pt`), e atualizar esse

@@ -16,11 +16,6 @@ export const featured = [
     alt: 'Sara e Roberto',
   },
   {
-    weddingId: 'sandra-bernardo',
-    image: '/images/featured-sandra-bernardo.jpg',
-    alt: 'Sandra e Bernardo',
-  },
-  {
     weddingId: 'diogo-leticia',
     image: '/images/featured-diogo-leticia.jpg',
     alt: 'Diogo e Letícia',

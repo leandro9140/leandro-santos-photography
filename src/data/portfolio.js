@@ -5,7 +5,7 @@
 // 2. Copia um dos objetos abaixo e ajusta os campos
 //
 // NOTA: `date` de todos os casais abaixo ainda é placeholder ("2025") — substitui
-// pela data real de cada casamento. `location` de Sandra & Bernardo e Diogo & Letícia
+// pela data real de cada casamento. `location` de Sara & Ricardo e Diogo & Letícia
 // também ainda é placeholder ("Local a confirmar").
 
 export const portfolio = [
@@ -25,26 +25,42 @@ export const portfolio = [
     ],
   },
   {
-    id: 'sandra-bernardo',
-    couple: 'Sandra & Bernardo',
+    id: 'sara-ricardo',
+    couple: 'Sara & Ricardo',
     location: 'Local a confirmar',
     date: '2025',
     images: [
-      { src: '/images/sandra-bernardo-01.jpg', alt: 'Sandra & Bernardo — 01' },
-      { src: '/images/sandra-bernardo-02.jpg', alt: 'Sandra & Bernardo — 02' },
-      { src: '/images/sandra-bernardo-03.jpg', alt: 'Sandra & Bernardo — 03' },
-      { src: '/images/sandra-bernardo-04.jpg', alt: 'Sandra & Bernardo — 04' },
-      { src: '/images/sandra-bernardo-05.jpg', alt: 'Sandra & Bernardo — 05' },
-      { src: '/images/sandra-bernardo-06.jpg', alt: 'Sandra & Bernardo — 06' },
-      { src: '/images/sandra-bernardo-07.jpg', alt: 'Sandra & Bernardo — 07' },
-      { src: '/images/sandra-bernardo-08.jpg', alt: 'Sandra & Bernardo — 08' },
-      { src: '/images/sandra-bernardo-09.jpg', alt: 'Sandra & Bernardo — 09' },
-      { src: '/images/sandra-bernardo-10.jpg', alt: 'Sandra & Bernardo — 10' },
-      { src: '/images/sandra-bernardo-11.jpg', alt: 'Sandra & Bernardo — 11' },
-      { src: '/images/sandra-bernardo-12.jpg', alt: 'Sandra & Bernardo — 12' },
-      { src: '/images/sandra-bernardo-13.jpg', alt: 'Sandra & Bernardo — 13' },
-      { src: '/images/sandra-bernardo-14.jpg', alt: 'Sandra & Bernardo — 14' },
-      { src: '/images/sandra-bernardo-15.jpg', alt: 'Sandra & Bernardo — 15' },
+      { src: '/images/sara-ricardo-01.jpg', alt: 'Sara & Ricardo — 01' },
+      { src: '/images/sara-ricardo-02.jpg', alt: 'Sara & Ricardo — 02' },
+      { src: '/images/sara-ricardo-03.jpg', alt: 'Sara & Ricardo — 03' },
+      { src: '/images/sara-ricardo-04.jpg', alt: 'Sara & Ricardo — 04' },
+      { src: '/images/sara-ricardo-05.jpg', alt: 'Sara & Ricardo — 05' },
+      { src: '/images/sara-ricardo-06.jpg', alt: 'Sara & Ricardo — 06' },
+      { src: '/images/sara-ricardo-07.jpg', alt: 'Sara & Ricardo — 07' },
+      { src: '/images/sara-ricardo-08.jpg', alt: 'Sara & Ricardo — 08' },
+      { src: '/images/sara-ricardo-09.jpg', alt: 'Sara & Ricardo — 09' },
+      { src: '/images/sara-ricardo-10.jpg', alt: 'Sara & Ricardo — 10' },
+      { src: '/images/sara-ricardo-11.jpg', alt: 'Sara & Ricardo — 11' },
+      { src: '/images/sara-ricardo-12.jpg', alt: 'Sara & Ricardo — 12' },
+      { src: '/images/sara-ricardo-13.jpg', alt: 'Sara & Ricardo — 13' },
+      { src: '/images/sara-ricardo-14.jpg', alt: 'Sara & Ricardo — 14' },
+      { src: '/images/sara-ricardo-15.jpg', alt: 'Sara & Ricardo — 15' },
+      { src: '/images/sara-ricardo-16.jpg', alt: 'Sara & Ricardo — 16' },
+      { src: '/images/sara-ricardo-17.jpg', alt: 'Sara & Ricardo — 17' },
+      { src: '/images/sara-ricardo-18.jpg', alt: 'Sara & Ricardo — 18' },
+      { src: '/images/sara-ricardo-19.jpg', alt: 'Sara & Ricardo — 19' },
+      { src: '/images/sara-ricardo-20.jpg', alt: 'Sara & Ricardo — 20' },
+      { src: '/images/sara-ricardo-21.jpg', alt: 'Sara & Ricardo — 21' },
+      { src: '/images/sara-ricardo-22.jpg', alt: 'Sara & Ricardo — 22' },
+      { src: '/images/sara-ricardo-23.jpg', alt: 'Sara & Ricardo — 23' },
+      { src: '/images/sara-ricardo-24.jpg', alt: 'Sara & Ricardo — 24' },
+      { src: '/images/sara-ricardo-25.jpg', alt: 'Sara & Ricardo — 25' },
+      { src: '/images/sara-ricardo-26.jpg', alt: 'Sara & Ricardo — 26' },
+      { src: '/images/sara-ricardo-27.jpg', alt: 'Sara & Ricardo — 27' },
+      { src: '/images/sara-ricardo-28.jpg', alt: 'Sara & Ricardo — 28' },
+      { src: '/images/sara-ricardo-29.jpg', alt: 'Sara & Ricardo — 29' },
+      { src: '/images/sara-ricardo-30.jpg', alt: 'Sara & Ricardo — 30' },
+      { src: '/images/sara-ricardo-31.jpg', alt: 'Sara & Ricardo — 31' },
     ],
   },
   {
