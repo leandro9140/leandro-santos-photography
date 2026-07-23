@@ -43,7 +43,6 @@
     <nav class="site-nav__links" aria-label="Navegação principal">
       <a href="#sobre">Sobre</a>
       <a href="#portfolio">Portefólio</a>
-      <a href="#pacotes">Pacotes</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
@@ -56,37 +55,24 @@
     <div class="menu-overlay__links">
       <a href="#sobre">Sobre</a>
       <a href="#portfolio">Portefólio</a>
-      <a href="#pacotes">Pacotes</a>
       <a href="#testemunhos">Testemunhos</a>
       <a href="#contacto">Contacto</a>
     </div>
     <div class="menu-overlay__socials">
-      <!-- PLACEHOLDER: link real do Instagram -->
-      <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.instagram.com/leandrosantos.photo/" target="_blank" rel="noopener noreferrer">@leandrosantos.photo</a>
     </div>
   </nav>
 
   <main id="conteudo-principal">
-    <!-- ============ HERO (imagem única, full-screen) ============ -->
+    <!-- ============ HERO (slideshow full-screen, sem texto sobreposto) ============ -->
     <section class="hero" id="hero" aria-label="Abertura">
+      <!-- h1 mantido para SEO/leitores de ecrã, mas visualmente escondido — o pedido
+           foi para o hero mostrar só o slideshow, sem texto por cima. -->
+      <h1 class="sr-only">Leandro Santos Photography — Fotografia de casamentos no Porto</h1>
+
       <figure class="hero__media" id="hero-media">
         <!-- slides gerados por JS a partir de src/data/heroSlides.js -->
       </figure>
-
-      <div class="hero__content">
-        <p class="hero__eyebrow">Fotografia de casamentos — Porto, Portugal</p>
-        <h1 class="editorial-heading editorial-heading--center hero__title">
-          <span class="editorial-heading__line editorial-heading__line--sm">Leandro Santos</span>
-          <span class="editorial-heading__line editorial-heading__line--xl">Photography</span>
-        </h1>
-        <p class="hero__tagline"><!-- PLACEHOLDER: tagline -->Fotografia de casamento no Porto, <em>com alma</em>.</p>
-        <a href="#portfolio" class="btn btn--accent hero__cta">Ver Portfólio</a>
-      </div>
-
-      <a class="hero__scroll" href="#sobre" aria-label="Descer para a secção Sobre">
-        <span class="hero__scroll-line" aria-hidden="true"></span>
-        <span>Scroll</span>
-      </a>
     </section>
 
     <!-- ============ SOBRE ============ -->
@@ -94,25 +80,23 @@
       <div class="container about-preview" data-reveal>
         <figure class="media-frame about-preview__media">
           <img
-            src="/images/about.svg"
-            alt="Placeholder — retrato do fotógrafo Leandro Santos, a substituir por foto real"
+            src="/images/about.jpg"
+            alt="Retrato do fotógrafo Leandro Santos"
             loading="lazy"
-            width="1200"
-            height="1500"
+            width="928"
+            height="1152"
           />
         </figure>
         <div class="about-preview__body">
           <p class="eyebrow">Sobre</p>
           <h2 class="editorial-heading">
-            <span class="editorial-heading__line editorial-heading__line--sm">Observar primeiro,</span>
-            <span class="editorial-heading__line editorial-heading__line--lg">fotografar <em>depois</em></span>
+            <span class="editorial-heading__line editorial-heading__line--sm">Menos pose.</span>
+            <span class="editorial-heading__line editorial-heading__line--lg">Mais <em>verdade</em>.</span>
           </h2>
           <p class="about-preview__lead">
-            <!-- PLACEHOLDER --> Do detailing automóvel à fotografia de casamentos, o
-            olhar técnico manteve-se: luz, movimento, detalhe. Prefiro observar a dirigir
-            — o resultado são fotografias que parecem memórias, não poses.
+            Sete anos a fotografar o que acontece, não o que se encena. É esse o
+            princípio que trago para o dia do teu casamento.
           </p>
-          <a href="#sobre-completo" class="about-preview__more">Saber Mais</a>
         </div>
       </div>
 
@@ -206,67 +190,6 @@
       <button class="lightbox__next" id="lightbox-next" aria-label="Imagem seguinte">&#8250;</button>
     </div>
 
-    <!-- ============ PACOTES ============ -->
-    <section id="pacotes">
-      <div class="container">
-        <div class="section-head section-head--center" data-reveal>
-          <p class="eyebrow">Pacotes</p>
-          <h2 class="editorial-heading editorial-heading--center">
-            <span class="editorial-heading__line editorial-heading__line--sm">Serviços para</span>
-            <span class="editorial-heading__line editorial-heading__line--lg">o vosso dia</span>
-          </h2>
-          <p class="section-lead">
-            <!-- PLACEHOLDER --> Cada casamento é diferente — os pacotes abaixo são um
-            ponto de partida. Todos os valores são definidos sob consulta.
-          </p>
-        </div>
-
-        <div class="grid grid--3 packages-grid">
-          <article class="package-card" data-reveal>
-            <h3 class="package-card__name"><!-- PLACEHOLDER -->Essencial</h3>
-            <p class="package-card__desc">
-              <!-- PLACEHOLDER --> Cobertura da cerimónia e sessão de retratos — ideal para
-              casamentos mais intimistas.
-            </p>
-            <ul class="package-card__list">
-              <li>Até 6 horas de cobertura</li>
-              <li>Cerimónia + retratos de casal</li>
-              <li>Galeria digital editada</li>
-            </ul>
-            <p class="package-card__note">Sob consulta</p>
-          </article>
-
-          <article class="package-card" data-reveal data-reveal-delay="1">
-            <h3 class="package-card__name"><!-- PLACEHOLDER -->Completo</h3>
-            <p class="package-card__desc">
-              <!-- PLACEHOLDER --> Do making of à festa — a experiência completa do
-              grande dia, do início ao fim.
-            </p>
-            <ul class="package-card__list">
-              <li>Cobertura o dia inteiro</li>
-              <li>Making of, cerimónia e festa</li>
-              <li>Galeria digital + seleção em álbum</li>
-            </ul>
-            <p class="package-card__note">Sob consulta</p>
-          </article>
-
-          <article class="package-card" data-reveal data-reveal-delay="2">
-            <h3 class="package-card__name"><!-- PLACEHOLDER -->Destination</h3>
-            <p class="package-card__desc">
-              <!-- PLACEHOLDER --> Para casais internacionais ou casamentos fora do Porto —
-              deslocação incluída.
-            </p>
-            <ul class="package-card__list">
-              <li>Cobertura personalizada</li>
-              <li>Viagem e alojamento incluídos</li>
-              <li>Sessão extra pré-casamento</li>
-            </ul>
-            <p class="package-card__note">Sob consulta</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ TESTEMUNHOS ============ -->
     <section id="testemunhos" class="testimonials-section">
       <div class="container">
@@ -321,8 +244,7 @@
           </div>
 
           <div class="social-links">
-            <!-- PLACEHOLDER: link real do Instagram -->
-            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.instagram.com/leandrosantos.photo/" target="_blank" rel="noopener noreferrer">@leandrosantos.photo</a>
           </div>
         </div>
 
@@ -386,7 +308,7 @@
       <p class="site-footer__brand">Leandro Santos Photography</p>
       <p>&copy; <span id="footer-year">2026</span> Leandro Santos Photography. Todos os direitos reservados.</p>
       <div class="site-footer__links">
-        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.instagram.com/leandrosantos.photo/" target="_blank" rel="noopener noreferrer">@leandrosantos.photo</a>
         <a href="mailto:leandrosantosphotography@hotmail.com">E-mail</a>
       </div>
     </div>

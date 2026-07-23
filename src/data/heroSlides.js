@@ -1,9 +1,18 @@
-// Slideshow do hero — imagens em full-screen que alternam automaticamente.
-// PLACEHOLDER: substitui por fotos reais (mantém os nomes ou atualiza os caminhos).
-// Para adicionar mais imagens ao slideshow, basta acrescentar mais objetos aqui.
+// Slideshow do hero — imagens e vídeos em full-screen que alternam automaticamente
+// a cada 3 segundos (ver src/modules/heroSlideshow.js).
+//
+// Cada slide tem type: 'video' | 'image'. Para adicionar mais slides, basta
+// acrescentar mais objetos aqui (video: coloca o ficheiro em public/videos/,
+// já convertido para H.264 — ver README).
 
 export const heroSlides = [
-  { src: '/images/hero-full.svg', alt: 'Placeholder — foto de casamento em full-screen, slide 1' },
-  { src: '/images/hero-slide-02.svg', alt: 'Placeholder — foto de casamento em full-screen, slide 2' },
-  { src: '/images/hero-slide-03.svg', alt: 'Placeholder — foto de casamento em full-screen, slide 3' },
+  { type: 'video', src: '/videos/hero-video-01.mp4' },
+  { type: 'video', src: '/videos/hero-video-02.mp4' },
+  { type: 'image', src: '/images/hero-01.jpg', alt: 'Leandro Santos Photography — casamento' },
+  { type: 'image', src: '/images/hero-02.jpg', alt: 'Leandro Santos Photography — casamento de Sara e Roberto' },
+  { type: 'image', src: '/images/hero-03.jpg', alt: 'Leandro Santos Photography — casamento' },
+  { type: 'image', src: '/images/hero-04.jpg', alt: 'Leandro Santos Photography — casamento' },
+  { type: 'image', src: '/images/hero-05.jpg', alt: 'Leandro Santos Photography — sessão editorial' },
+  { type: 'image', src: '/images/hero-06.jpg', alt: 'Leandro Santos Photography — casamento' },
+  { type: 'image', src: '/images/hero-07.jpg', alt: 'Leandro Santos Photography — casamento' },
 ];

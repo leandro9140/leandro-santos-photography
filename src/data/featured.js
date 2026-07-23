@@ -11,18 +11,18 @@
 
 export const featured = [
   {
-    weddingId: 'sofia-miguel',
-    image: '/images/featured-01.svg',
-    alt: 'Placeholder — destaque do casamento de Sofia & Miguel',
+    weddingId: 'sara-roberto',
+    image: '/images/featured-sara-roberto.jpg',
+    alt: 'Sara e Roberto',
   },
   {
-    weddingId: 'rita-joao',
-    image: '/images/featured-02.svg',
-    alt: 'Placeholder — destaque do casamento de Rita & João',
+    weddingId: 'sandra-bernardo',
+    image: '/images/featured-sandra-bernardo.jpg',
+    alt: 'Sandra e Bernardo',
   },
   {
-    weddingId: 'ana-tiago',
-    image: '/images/featured-03.svg',
-    alt: 'Placeholder — destaque do casamento de Ana & Tiago',
+    weddingId: 'diogo-leticia',
+    image: '/images/featured-diogo-leticia.jpg',
+    alt: 'Diogo e Letícia',
   },
 ];
