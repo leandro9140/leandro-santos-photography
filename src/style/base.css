@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+/* Rede de segurança contra scroll horizontal indesejado em mobile (ex.: Safari no
+   iOS mostra por vezes um resquício de conteúdo à direita ao arrastar). */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* O scroll suave é feito pelo Lenis (src/modules/smoothScroll.js), não pelo CSS —
    scroll-behavior nativo entraria em conflito com o loop de animação do Lenis. */
 html.lenis {
