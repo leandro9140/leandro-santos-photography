@@ -1,0 +1,70 @@
+/*
+  Sistema de design — Leandro Santos Photography
+  Todas as cores, tipografia e espaçamentos vivem aqui.
+  Ajusta estes valores para alterar o look do site inteiro.
+*/
+
+:root {
+  /* ---- Cor ----
+     Tema CLARO: --color-paper é o fundo principal do site, --color-ink é o texto
+     principal. O hero e a lightbox continuam escuros de propósito (são uma foto e
+     um visualizador de imagem, respetivamente) — usam tons escuros fixos, não estas
+     variáveis de tema. */
+  --color-ink: #0d0d0c;          /* preto quente — texto principal sobre fundo claro */
+  --color-ink-soft: #423f36;     /* texto secundário mais suave, sobre fundo claro */
+  --color-graphite: #efece4;     /* fundo secundário claro (zebra entre secções) */
+  --color-graphite-soft: #e6e1d5;
+  --color-paper: #f5f4f0;        /* off-white — fundo principal do site */
+  --color-paper-dim: #e9e7e0;    /* texto claro sobre fundo ESCURO (hero, imagens) */
+  --color-accent: #8a6f42;       /* dourado envelhecido — com contraste sobre fundo claro */
+  --color-accent-soft: #ab8a57;  /* dourado mais claro, para uso decorativo/hover */
+  --color-muted: #6f6d61;        /* cinza para texto secundário sobre fundo claro */
+  --color-line: rgba(138, 111, 66, 0.3); /* linhas/separadores subtis */
+
+  /* ---- Tipografia ---- */
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --tracking-wide: 0.14em;
+  --tracking-wider: 0.22em;
+
+  --fs-display: clamp(3rem, 8vw, 6.5rem);
+  --fs-h1: clamp(2.25rem, 5vw, 4rem);
+  --fs-h2: clamp(1.75rem, 3.4vw, 2.75rem);
+  --fs-h3: clamp(1.25rem, 2vw, 1.6rem);
+  --fs-lead: clamp(1.05rem, 1.6vw, 1.35rem);
+  --fs-body: 1rem;
+  --fs-small: 0.85rem;
+  --fs-nav: 0.8rem;
+
+  /* Escala de tamanhos para o "editorial-heading" — títulos em colagem, com
+     linhas de tamanhos muito contrastantes dentro do mesmo bloco. */
+  --fs-editorial-xs: clamp(1.15rem, 2.4vw, 1.75rem);
+  --fs-editorial-sm: clamp(1.6rem, 3.4vw, 2.5rem);
+  --fs-editorial-md: clamp(2.3rem, 5vw, 3.75rem);
+  --fs-editorial-lg: clamp(3.2rem, 7.5vw, 5.75rem);
+  --fs-editorial-xl: clamp(4rem, 10vw, 8rem);
+
+  /* ---- Espaçamento ---- */
+  --space-section: clamp(5rem, 12vw, 10rem);
+  --space-xl: clamp(3rem, 6vw, 5rem);
+  --space-lg: 2.5rem;
+  --space-md: 1.5rem;
+  --space-sm: 1rem;
+  --space-xs: 0.5rem;
+
+  --container-max: 1400px;
+  --container-narrow: 760px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+
+  /* ---- Movimento ---- */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-slow: 900ms;
+  --duration-base: 500ms;
+  --duration-fast: 250ms;
+
+  /* ---- Outros ---- */
+  --border-hairline: 1px solid var(--color-line);
+  --z-nav: 100;
+  --z-lightbox: 200;
+}
