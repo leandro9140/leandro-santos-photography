@@ -1,5 +1,6 @@
 // Slideshow do hero — imagens e vídeos em full-screen que alternam automaticamente
-// a cada 3 segundos (ver src/modules/heroSlideshow.js).
+// (ver src/modules/heroSlideshow.js). Imagens ficam 3 segundos cada; vídeos tocam
+// até ao fim antes de avançar para o slide seguinte.
 //
 // Cada slide tem type: 'video' | 'image'. Para adicionar mais slides, basta
 // acrescentar mais objetos aqui (video: coloca o ficheiro em public/videos/,

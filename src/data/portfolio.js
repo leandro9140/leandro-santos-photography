@@ -4,14 +4,15 @@
 // 1. Junta as fotos finais em public/images/ (ideal: .webp)
 // 2. Copia um dos objetos abaixo e ajusta os campos
 //
-// NOTA: `location` e `date` de todos os casais abaixo ainda são placeholders —
-// substitui pelo local e data reais de cada casamento.
+// NOTA: `date` de todos os casais abaixo ainda é placeholder ("2025") — substitui
+// pela data real de cada casamento. `location` de Sandra & Bernardo e Diogo & Letícia
+// também ainda é placeholder ("Local a confirmar").
 
 export const portfolio = [
   {
     id: 'sara-roberto',
     couple: 'Sara & Roberto',
-    location: 'Local a confirmar',
+    location: 'Pinta House, Quinta do Olival, Lamego',
     date: '2025',
     images: [
       { src: '/images/sara-roberto-01.jpg', alt: 'Sara & Roberto — 01' },
