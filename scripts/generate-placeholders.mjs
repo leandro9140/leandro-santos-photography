@@ -23,16 +23,6 @@ function escapeXml(str) {
     .replace(/'/g, '&apos;');
 }
 
-function logoPlaceholder({ textColor }) {
-  // Logótipo placeholder com fundo TRANSPARENTE (para sobrepor à foto do hero ou à
-  // barra de navegação). Substitui por logo-white.svg / logo-black.svg reais quando
-  // tiveres o ficheiro definitivo.
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="320" height="60" role="img" aria-label="Placeholder — logótipo Leandro Santos Photography">
-  <text x="0" y="28" font-family="Georgia, 'Times New Roman', serif" font-size="26" letter-spacing="2" fill="${textColor}">LEANDRO SANTOS</text>
-  <text x="0" y="48" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="1" fill="${textColor}" opacity="0.85">Photography</text>
-</svg>`;
-}
-
 function svgPlaceholder({ width, height, label, tone }) {
   const fontSize = Math.max(14, Math.round(width / 22));
   const safeLabel = escapeXml(label);
@@ -58,8 +48,11 @@ function svgPlaceholder({ width, height, label, tone }) {
 }
 
 const jobs = [
-  // Hero — imagem única em full-screen (ver .hero__media em sections.css)
-  { file: 'hero-full.svg', width: 1920, height: 1200, label: 'Hero — foto de casamento em full-screen' },
+  // Hero — slideshow full-screen, 3 imagens que alternam (ver src/data/heroSlides.js
+  // e src/modules/heroSlideshow.js)
+  { file: 'hero-full.svg', width: 1920, height: 1200, label: 'Hero — slide 01' },
+  { file: 'hero-slide-02.svg', width: 1920, height: 1200, label: 'Hero — slide 02' },
+  { file: 'hero-slide-03.svg', width: 1920, height: 1200, label: 'Hero — slide 03' },
 
   { file: 'about.svg', width: 1200, height: 1500, label: 'Retrato do fotógrafo' },
   { file: 'og-cover.svg', width: 1200, height: 630, label: 'Imagem para redes sociais (Open Graph)' },
@@ -105,9 +98,4 @@ jobs.forEach((job, i) => {
   writeFileSync(path.join(outDir, job.file), svg, 'utf8');
 });
 
-// Logótipo — duas variantes (fundo transparente) para a nav clara/escura. Ver
-// index.html (#nav-logo, data-src-light / data-src-dark) e src/modules/nav.js.
-writeFileSync(path.join(outDir, 'logo-white.svg'), logoPlaceholder({ textColor: '#f5f4f0' }), 'utf8');
-writeFileSync(path.join(outDir, 'logo-black.svg'), logoPlaceholder({ textColor: '#0d0d0c' }), 'utf8');
-
-console.log(`Geradas ${jobs.length} imagens placeholder + 2 logótipos em public/images/`);
+console.log(`Geradas ${jobs.length} imagens placeholder em public/images/`);

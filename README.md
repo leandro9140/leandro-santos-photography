@@ -62,11 +62,13 @@ Ordem das secções (de cima a baixo): Hero (mosaico) → Sobre (preview + vers�
 │   │   ├── portfolio.js        # Casamentos/sessões do portefólio (fácil de editar)
 │   │   ├── categories.js       # Categorias de portefólio (tiles): Casamentos, Casal, Família
 │   │   ├── featured.js         # Casamentos em destaque (imagens dedicadas + referência ao portfolio.js)
+│   │   ├── heroSlides.js       # Imagens do slideshow do hero (full-screen, 3s cada)
 │   │   └── testimonials.js     # Testemunhos de clientes (1-2, sem carrossel)
 │   └── modules/
 │       ├── smoothScroll.js     # Scroll suave (Lenis) + scroll/filtro por delegação de eventos
-│       ├── nav.js              # Header, overlay de menu full-screen, scrollspy
+│       ├── nav.js              # Header, overlay de menu full-screen, scrollspy, troca de logo
 │       ├── reveal.js           # Fade-in ao entrar no ecrã (IntersectionObserver)
+│       ├── heroSlideshow.js    # Slideshow do hero (crossfade a cada 3s)
 │       ├── gallery.js          # Filtros + grelha do portefólio completo
 │       ├── categoryTiles.js    # Tiles de categoria (Casamentos / Casal / Família)
 │       ├── featuredGalleries.js # Casamentos em destaque
@@ -184,10 +186,22 @@ Foram gerados pelo script `scripts/generate-placeholders.mjs` (podes correr
      <img src="/images/wedding-04-01.jpg" alt="..." loading="lazy" />
    </picture>
    ```
-5. Substitui também as imagens do hero (`hero-mosaic-01.svg` a `04.svg`), `about.svg`,
-   as 3 imagens de categoria (`category-*.svg`), as 3 imagens de destaque (`featured-*.svg`)
-   e `og-cover.svg` (esta última deve ser uma imagem `1200×630px`, formato `.jpg` ou
-   `.png`, para aparecer corretamente quando o site for partilhado no Instagram/Facebook/WhatsApp).
+5. Substitui também as imagens do slideshow do hero (`hero-full.svg`, `hero-slide-02.svg`,
+   `hero-slide-03.svg`), `about.svg`, as 3 imagens de categoria (`category-*.svg`), as 3
+   imagens de destaque (`featured-*.svg`) e `og-cover.svg` (esta última deve ser uma
+   imagem `1200×630px`, formato `.jpg` ou `.png`, para aparecer corretamente quando o
+   site for partilhado no Instagram/Facebook/WhatsApp).
+
+O logótipo (`public/images/logo-white.png` e `logo-black.png`) já são os ficheiros
+reais — não são placeholders.
+
+### Slideshow do hero
+
+`src/data/heroSlides.js` lista as imagens do hero (full-screen), a alternar a cada 3
+segundos com crossfade — ver `src/modules/heroSlideshow.js`. Para adicionar, remover ou
+reordenar imagens, edita esse array (basta um objeto `{ src, alt }` por imagem). Com
+`prefers-reduced-motion` ativo, o slideshow não avança automaticamente — mostra só a
+primeira imagem.
 
 ### Categorias de portefólio e casamentos em destaque
 
@@ -234,7 +248,7 @@ quem pediu para o reduzir.
 ## Checklist do que falta fazer manualmente
 
 - [ ] Criar a conta/Access Key no Web3Forms e configurar o `.env` (ver secção acima).
-- [ ] Substituir todas as imagens placeholder por fotografias reais.
+- [ ] Substituir as restantes imagens placeholder por fotografias reais (o logótipo já está feito).
 - [ ] Reescrever os textos marcados com `<!-- PLACEHOLDER -->` em `index.html`.
 - [ ] Atualizar `src/data/testimonials.js` com testemunhos reais de clientes.
 - [ ] Atualizar `src/data/portfolio.js` com os casamentos reais (nomes, locais, datas).
