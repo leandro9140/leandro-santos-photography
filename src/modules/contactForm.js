@@ -92,6 +92,13 @@ export function initContactForm() {
       if (result.success) {
         showStatus(statusEl, 'Mensagem enviada! Entraremos em contacto em breve.', 'success');
         form.reset();
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-18346514684/Y_MqCMHo6dUcEPyxpqxE',
+            value: 1.0,
+            currency: 'EUR',
+          });
+        }
       } else {
         showStatus(statusEl, 'Não foi possível enviar a mensagem. Tenta novamente ou escreve para o e-mail no rodapé.', 'error');
       }
