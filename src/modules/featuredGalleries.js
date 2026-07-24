@@ -1,6 +1,7 @@
 import { featured } from '../data/featured.js';
 import { portfolio } from '../data/portfolio.js';
 import { t, onLangChange } from '../i18n.js';
+import { observeReveal } from './reveal.js';
 
 export function initFeaturedGalleries() {
   const root = document.getElementById('featured-root');
@@ -29,6 +30,8 @@ export function initFeaturedGalleries() {
         </article>`;
       })
       .join('');
+
+    observeReveal(root);
   }
 
   render();
