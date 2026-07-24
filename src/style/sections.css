@@ -33,6 +33,20 @@
   background: linear-gradient(180deg, rgba(13, 13, 12, 0.35) 0%, rgba(13, 13, 12, 0.15) 45%, rgba(13, 13, 12, 0.8) 100%);
 }
 
+/* Os vídeos/fotos do hero são todos em formato paisagem (~2.4:1). Em mobile
+   (ecrã muito mais alto que largo), "cover" corta a maior parte da composição
+   lateral. Em vez disso, mostramos o enquadramento completo ("contain") sobre
+   um fundo escuro — como um letterbox de cinema — para nada ficar cortado. */
+@media (max-width: 640px) {
+  .hero__media {
+    background: #0d0d0c;
+  }
+
+  .hero__slide {
+    object-fit: contain;
+  }
+}
+
 /* ---------- Sobre ---------- */
 .about-preview {
   display: grid;
