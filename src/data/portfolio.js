@@ -5,8 +5,7 @@
 // 2. Copia um dos objetos abaixo e ajusta os campos
 //
 // NOTA: `date` de todos os casais abaixo ainda é placeholder ("2025") — substitui
-// pela data real de cada casamento. `location` de Sara & Ricardo e Diogo & Letícia
-// também ainda é placeholder ("Local a confirmar").
+// pela data real de cada casamento.
 
 export const portfolio = [
   {
@@ -27,7 +26,7 @@ export const portfolio = [
   {
     id: 'sara-ricardo',
     couple: 'Sara & Ricardo',
-    location: 'Local a confirmar',
+    location: 'Manor House Celreirós, Celreirós',
     date: '2025',
     images: [
       { src: '/images/sara-ricardo-01.jpg', alt: 'Sara & Ricardo — 01' },
@@ -66,7 +65,7 @@ export const portfolio = [
   {
     id: 'diogo-leticia',
     couple: 'Diogo & Letícia',
-    location: 'Local a confirmar',
+    location: 'Quinta da Felicidade, Paredes',
     date: '2025',
     images: [
       { src: '/images/diogo-leticia-01.jpg', alt: 'Diogo & Letícia — 01' },
