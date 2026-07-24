@@ -315,6 +315,26 @@
   }
 }
 
+.gallery-more {
+  display: block;
+  margin: var(--space-md) auto 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  font-size: var(--fs-nav);
+  padding-bottom: 3px;
+  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.gallery-more:hover,
+.gallery-more:focus-visible {
+  color: var(--color-accent-soft);
+  border-color: var(--color-accent-soft);
+}
+
 /* ---------- Lightbox ---------- */
 .lightbox {
   position: fixed;

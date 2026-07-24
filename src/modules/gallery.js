@@ -1,6 +1,17 @@
 import { portfolio } from '../data/portfolio.js';
 import { initLightbox } from './lightbox.js';
 
+const PREVIEW_COUNT = 4;
+
+function shuffle(list) {
+  const result = [...list];
+  for (let i = result.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
 function renderFilters(container, onFilter) {
   const buttons = [
     { id: 'all', label: 'Todos' },
@@ -30,12 +41,17 @@ function renderFilters(container, onFilter) {
   });
 }
 
-function renderGallery(root, weddingId, lightbox) {
+function renderGallery(root, weddingId, lightbox, shuffledByWedding, expandedWeddings) {
   const weddings = weddingId === 'all' ? portfolio : portfolio.filter((w) => w.id === weddingId);
 
   root.innerHTML = weddings
-    .map(
-      (wedding) => `
+    .map((wedding) => {
+      const shuffled = shuffledByWedding.get(wedding.id);
+      const expanded = expandedWeddings.has(wedding.id);
+      const visible = expanded ? shuffled : shuffled.slice(0, PREVIEW_COUNT);
+      const hasMore = shuffled.length > PREVIEW_COUNT;
+
+      return `
       <div class="wedding-group" data-wedding="${wedding.id}">
         ${
           weddingId === 'all'
@@ -46,7 +62,7 @@ function renderGallery(root, weddingId, lightbox) {
             : ''
         }
         <div class="gallery-grid" data-gallery="${wedding.id}">
-          ${wedding.images
+          ${visible
             .map(
               (img, i) => `
               <button class="gallery-item${i === 1 ? ' gallery-item--wide' : ''}" data-index="${i}" aria-label="Ver imagem: ${img.alt}">
@@ -57,19 +73,31 @@ function renderGallery(root, weddingId, lightbox) {
             )
             .join('')}
         </div>
-      </div>`
-    )
+        ${!expanded && hasMore ? `<button class="gallery-more" data-wedding-more="${wedding.id}">Ver portefólio completo</button>` : ''}
+      </div>`;
+    })
     .join('');
 
   root.querySelectorAll('.wedding-group').forEach((group) => {
     const id = group.dataset.wedding;
     const wedding = portfolio.find((w) => w.id === id);
+    const shuffled = shuffledByWedding.get(id);
+    const expanded = expandedWeddings.has(id);
+    const visible = expanded ? shuffled : shuffled.slice(0, PREVIEW_COUNT);
+
     group.querySelectorAll('.gallery-item').forEach((btn) => {
       btn.addEventListener('click', () => {
         const index = Number(btn.dataset.index);
-        const images = wedding.images.map((img) => ({ ...img, caption: `${wedding.couple} — ${wedding.location}` }));
+        const images = visible.map((img) => ({ ...img, caption: `${wedding.couple} — ${wedding.location}` }));
         lightbox.open(images, index, btn);
       });
+    });
+  });
+
+  root.querySelectorAll('[data-wedding-more]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      expandedWeddings.add(btn.dataset.weddingMore);
+      renderGallery(root, weddingId, lightbox, shuffledByWedding, expandedWeddings);
     });
   });
 }
@@ -80,7 +108,9 @@ export function initGallery() {
   if (!filtersEl || !root) return;
 
   const lightbox = initLightbox();
+  const shuffledByWedding = new Map(portfolio.map((wedding) => [wedding.id, shuffle(wedding.images)]));
+  const expandedWeddings = new Set();
 
-  renderFilters(filtersEl, (filter) => renderGallery(root, filter, lightbox));
-  renderGallery(root, 'all', lightbox);
+  renderFilters(filtersEl, (filter) => renderGallery(root, filter, lightbox, shuffledByWedding, expandedWeddings));
+  renderGallery(root, 'all', lightbox, shuffledByWedding, expandedWeddings);
 }
