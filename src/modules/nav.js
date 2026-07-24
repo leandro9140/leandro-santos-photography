@@ -53,22 +53,4 @@ export function initNav() {
       if (event.key === 'Escape') closeMenu();
     });
   }
-
-  // Scrollspy: marca o link ativo consoante a secção visível
-  const sections = document.querySelectorAll('main section[id]');
-  const links = document.querySelectorAll('.site-nav__links a');
-
-  const spy = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        links.forEach((link) => {
-          link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`);
-        });
-      });
-    },
-    { rootMargin: '-45% 0px -50% 0px' }
-  );
-
-  sections.forEach((section) => spy.observe(section));
 }
