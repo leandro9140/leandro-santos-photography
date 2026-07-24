@@ -33,11 +33,21 @@
   background: linear-gradient(180deg, rgba(13, 13, 12, 0.35) 0%, rgba(13, 13, 12, 0.15) 45%, rgba(13, 13, 12, 0.8) 100%);
 }
 
-/* Os vídeos/fotos do hero são todos em formato paisagem (~2.4:1). Em mobile
-   (ecrã muito mais alto que largo), "cover" corta a maior parte da composição
-   lateral. Em vez disso, mostramos o enquadramento completo ("contain") sobre
-   um fundo escuro — como um letterbox de cinema — para nada ficar cortado. */
+/* Os vídeos/fotos do hero são todos em formato paisagem (fotos ~3:2, vídeos
+   ~2.4:1). Em mobile (ecrã muito mais alto que largo), "cover" corta a maior
+   parte da composição lateral. Em vez disso, mostramos o enquadramento
+   completo ("contain") sobre um fundo escuro — como um letterbox de cinema —
+   para nada ficar cortado. O hero deixa de ser full-screen e passa a ter a
+   proporção das fotos (3:2, a maioria dos slides): assim as fotos preenchem
+   o quadro por completo (zero barras) e só os 2 vídeos, mais largos, ficam
+   com uma barra fina em cima/baixo. */
 @media (max-width: 640px) {
+  .hero {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+
   .hero__media {
     background: #0d0d0c;
   }
