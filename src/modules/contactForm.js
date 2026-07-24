@@ -1,6 +1,8 @@
 // Formulário de contacto — envia por e-mail via Web3Forms (sem backend próprio).
 // Configuração necessária: ver README.md > "Configurar o formulário de contacto".
 
+import { t } from '../i18n.js';
+
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
@@ -18,7 +20,7 @@ function validate(form) {
 
   const name = form.elements.name;
   if (!name.value.trim()) {
-    setFieldError(name, 'Por favor, indica o vosso nome.');
+    setFieldError(name, t('form.error.name'));
     isValid = false;
   } else {
     setFieldError(name, '');
@@ -26,10 +28,10 @@ function validate(form) {
 
   const email = form.elements.email;
   if (!email.value.trim()) {
-    setFieldError(email, 'Por favor, indica um e-mail.');
+    setFieldError(email, t('form.error.email-required'));
     isValid = false;
   } else if (!EMAIL_RE.test(email.value.trim())) {
-    setFieldError(email, 'Introduz um e-mail válido.');
+    setFieldError(email, t('form.error.email-invalid'));
     isValid = false;
   } else {
     setFieldError(email, '');
@@ -56,17 +58,13 @@ export function initContactForm() {
     if (!validate(form)) return;
 
     if (!ACCESS_KEY || ACCESS_KEY.includes('coloca-aqui')) {
-      showStatus(
-        statusEl,
-        'O formulário ainda não está configurado (falta a chave do Web3Forms). Ver README.md.',
-        'error'
-      );
+      showStatus(statusEl, t('form.status.not-configured'), 'error');
       return;
     }
 
     const originalLabel = submitBtn.textContent;
     submitBtn.disabled = true;
-    submitBtn.textContent = 'A enviar...';
+    submitBtn.textContent = t('form.status.sending');
 
     const payload = {
       access_key: ACCESS_KEY,
@@ -90,7 +88,7 @@ export function initContactForm() {
       const result = await response.json();
 
       if (result.success) {
-        showStatus(statusEl, 'Mensagem enviada! Entraremos em contacto em breve.', 'success');
+        showStatus(statusEl, t('form.status.success'), 'success');
         form.reset();
         if (typeof window.gtag === 'function') {
           window.gtag('event', 'conversion', {
@@ -100,10 +98,10 @@ export function initContactForm() {
           });
         }
       } else {
-        showStatus(statusEl, 'Não foi possível enviar a mensagem. Tenta novamente ou escreve para o e-mail no rodapé.', 'error');
+        showStatus(statusEl, t('form.status.error-api'), 'error');
       }
     } catch (error) {
-      showStatus(statusEl, 'Erro de ligação. Verifica a tua internet e tenta novamente.', 'error');
+      showStatus(statusEl, t('form.status.error-network'), 'error');
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = originalLabel;

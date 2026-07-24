@@ -1,5 +1,6 @@
 import './style/main.css';
 
+import { initI18n } from './i18n.js';
 import { initSmoothScroll } from './modules/smoothScroll.js';
 import { initNav } from './modules/nav.js';
 import { initReveal } from './modules/reveal.js';
@@ -12,6 +13,7 @@ import { initContactForm } from './modules/contactForm.js';
 
 document.getElementById('footer-year').textContent = new Date().getFullYear();
 
+initI18n();
 initSmoothScroll();
 initNav();
 initHeroSlideshow();

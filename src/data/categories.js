@@ -8,26 +8,35 @@
 export const categories = [
   {
     id: 'preparacao',
-    title: 'Preparação',
-    description: 'Os últimos retoques antes do grande momento.',
+    title: { pt: 'Preparação', en: 'Getting Ready' },
+    description: {
+      pt: 'Os últimos retoques antes do grande momento.',
+      en: 'The final touches before the big moment.',
+    },
     image: '/images/category-preparacao.jpg',
-    alt: 'Preparação da noiva antes da cerimónia',
+    alt: { pt: 'Preparação da noiva antes da cerimónia', en: 'The bride getting ready before the ceremony' },
     href: '#portfolio',
   },
   {
     id: 'sessao',
-    title: 'Sessão',
-    description: 'Retratos a dois, em luz natural.',
+    title: { pt: 'Sessão', en: 'Portraits' },
+    description: {
+      pt: 'Retratos a dois, em luz natural.',
+      en: 'Portraits of the couple, in natural light.',
+    },
     image: '/images/category-sessao.jpg',
-    alt: 'Sessão de retratos do casal',
+    alt: { pt: 'Sessão de retratos do casal', en: 'Portrait session with the couple' },
     href: '#portfolio',
   },
   {
     id: 'festa',
-    title: 'Festa',
-    description: 'Onde a noite ganha vida.',
+    title: { pt: 'Festa', en: 'Reception' },
+    description: {
+      pt: 'Onde a noite ganha vida.',
+      en: 'Where the night comes alive.',
+    },
     image: '/images/category-festa.jpg',
-    alt: 'Festa de casamento',
+    alt: { pt: 'Festa de casamento', en: 'Wedding reception' },
     href: '#portfolio',
   },
 ];

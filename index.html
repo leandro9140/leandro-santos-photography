@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <a class="skip-link" href="#conteudo-principal">Saltar para o conteúdo</a>
+  <a class="skip-link" href="#conteudo-principal" data-i18n="skip-link">Saltar para o conteúdo</a>
 
   <header class="site-nav" id="site-nav" data-nav>
     <a href="#hero" class="site-nav__logo">
@@ -50,17 +50,21 @@
       />
     </a>
 
-    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu">
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-overlay" aria-label="Abrir menu" data-i18n-aria-label="nav.open-menu">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  <nav class="menu-overlay" id="menu-overlay" aria-label="Navegação completa">
+  <nav class="menu-overlay" id="menu-overlay" aria-label="Navegação completa" data-i18n-aria-label="menu.nav-label">
     <div class="menu-overlay__links">
-      <a href="#sobre">Sobre</a>
-      <a href="#portfolio">Portefólio</a>
-      <a href="#testemunhos">Testemunhos</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#sobre" data-i18n="menu.sobre">Sobre</a>
+      <a href="#portfolio" data-i18n="menu.portfolio">Portefólio</a>
+      <a href="#testemunhos" data-i18n="menu.testemunhos">Testemunhos</a>
+      <a href="#contacto" data-i18n="menu.contacto">Contacto</a>
+    </div>
+    <div class="menu-overlay__lang" role="group" aria-label="Idioma / Language">
+      <button type="button" class="lang-option" data-lang-option="pt">PT</button>
+      <button type="button" class="lang-option" data-lang-option="en">EN</button>
     </div>
     <div class="menu-overlay__socials">
       <a href="https://www.instagram.com/leandrosantos.photo/" target="_blank" rel="noopener noreferrer">@leandrosantos.photo</a>
@@ -72,7 +76,7 @@
     <section class="hero" id="hero" aria-label="Abertura">
       <!-- h1 mantido para SEO/leitores de ecrã, mas visualmente escondido — o pedido
            foi para o hero mostrar só o slideshow, sem texto por cima. -->
-      <h1 class="sr-only">Leandro Santos Photography — Fotografia de casamentos no Porto</h1>
+      <h1 class="sr-only" data-i18n="hero.title">Leandro Santos Photography — Fotografia de casamentos no Porto</h1>
 
       <figure class="hero__media" id="hero-media">
         <!-- slides gerados por JS a partir de src/data/heroSlides.js -->
@@ -92,12 +96,12 @@
           />
         </figure>
         <div class="about-preview__body">
-          <p class="eyebrow">Sobre</p>
-          <h2 class="editorial-heading">
+          <p class="eyebrow" data-i18n="about.eyebrow">Sobre</p>
+          <h2 class="editorial-heading" data-i18n-html="about.heading-html">
             <span class="editorial-heading__line editorial-heading__line--sm">Menos pose.</span>
             <span class="editorial-heading__line editorial-heading__line--lg">Mais <em>verdade</em>.</span>
           </h2>
-          <p class="about-preview__lead">
+          <p class="about-preview__lead" data-i18n="about.lead">
             Sete anos a fotografar o que acontece, não o que se encena. É esse o
             princípio que trago para o dia do teu casamento.
           </p>
@@ -109,8 +113,8 @@
     <section id="categorias" class="bg-graphite">
       <div class="container">
         <div class="section-head section-head--center" data-reveal>
-          <p class="eyebrow">Portefólio</p>
-          <h2 class="editorial-heading editorial-heading--center">
+          <p class="eyebrow" data-i18n="categorias.eyebrow">Portefólio</p>
+          <h2 class="editorial-heading editorial-heading--center" data-i18n-html="categorias.heading-html">
             <span class="editorial-heading__line editorial-heading__line--sm">O que</span>
             <span class="editorial-heading__line editorial-heading__line--lg">fotografo</span>
           </h2>
@@ -126,8 +130,8 @@
     <section id="destaques">
       <div class="container">
         <div class="section-head" data-reveal>
-          <p class="eyebrow">Casamentos em destaque</p>
-          <h2 class="editorial-heading">
+          <p class="eyebrow" data-i18n="destaques.eyebrow">Casamentos em destaque</p>
+          <h2 class="editorial-heading" data-i18n-html="destaques.heading-html">
             <span class="editorial-heading__line editorial-heading__line--sm">Histórias reais,</span>
             <span class="editorial-heading__line editorial-heading__line--lg">contadas <em>com</em> tempo</span>
           </h2>
@@ -143,18 +147,18 @@
     <section id="portfolio" class="portfolio-section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <p class="eyebrow">Portefólio completo</p>
-          <h2 class="editorial-heading">
+          <p class="eyebrow" data-i18n="portfolio.eyebrow">Portefólio completo</p>
+          <h2 class="editorial-heading" data-i18n-html="portfolio.heading-html">
             <span class="editorial-heading__line editorial-heading__line--sm">Todos os</span>
             <span class="editorial-heading__line editorial-heading__line--lg">casamentos</span>
           </h2>
-          <p class="section-lead">
-            <!-- PLACEHOLDER --> Uma seleção de histórias documentadas nos últimos meses,
+          <p class="section-lead" data-i18n="portfolio.lead">
+            Uma seleção de histórias documentadas nos últimos meses,
             do Porto ao Douro.
           </p>
         </div>
 
-        <div class="gallery-filters" id="gallery-filters" role="tablist" aria-label="Filtrar por casamento" data-reveal>
+        <div class="gallery-filters" id="gallery-filters" role="tablist" aria-label="Filtrar por casamento" data-i18n-aria-label="portfolio.filters-label" data-reveal>
           <!-- gerado por JS: src/modules/gallery.js -->
         </div>
 
@@ -165,22 +169,22 @@
     </section>
 
     <!-- Lightbox (controlado por src/modules/lightbox.js) -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imagem" hidden>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imagem" data-i18n-aria-label="lightbox.label" hidden>
       <figure class="lightbox__figure">
         <img id="lightbox-image" src="" alt="" />
         <figcaption class="lightbox__caption" id="lightbox-caption"></figcaption>
       </figure>
-      <button class="lightbox__close" id="lightbox-close" aria-label="Fechar">&times;</button>
-      <button class="lightbox__prev" id="lightbox-prev" aria-label="Imagem anterior">&#8249;</button>
-      <button class="lightbox__next" id="lightbox-next" aria-label="Imagem seguinte">&#8250;</button>
+      <button class="lightbox__close" id="lightbox-close" aria-label="Fechar" data-i18n-aria-label="lightbox.close">&times;</button>
+      <button class="lightbox__prev" id="lightbox-prev" aria-label="Imagem anterior" data-i18n-aria-label="lightbox.prev">&#8249;</button>
+      <button class="lightbox__next" id="lightbox-next" aria-label="Imagem seguinte" data-i18n-aria-label="lightbox.next">&#8250;</button>
     </div>
 
     <!-- ============ TESTEMUNHOS ============ -->
     <section id="testemunhos" class="testimonials-section">
       <div class="container">
         <div class="section-head section-head--center" data-reveal>
-          <p class="eyebrow">Testemunhos</p>
-          <h2 class="editorial-heading editorial-heading--center">
+          <p class="eyebrow" data-i18n="testemunhos.eyebrow">Testemunhos</p>
+          <h2 class="editorial-heading editorial-heading--center" data-i18n-html="testemunhos.heading-html">
             <span class="editorial-heading__line editorial-heading__line--sm">O que dizem</span>
             <span class="editorial-heading__line editorial-heading__line--lg">os casais</span>
           </h2>
@@ -195,11 +199,11 @@
     <!-- ============ CHAMADA FINAL PARA CONTACTO ============ -->
     <section class="final-cta">
       <div class="container" data-reveal>
-        <h2 class="editorial-heading editorial-heading--center final-cta__heading">
+        <h2 class="editorial-heading editorial-heading--center final-cta__heading" data-i18n-html="cta.heading-html">
           <span class="editorial-heading__line editorial-heading__line--md">Um dia.</span>
           <span class="editorial-heading__line editorial-heading__line--lg">Histórias <em>para</em> sempre.</span>
         </h2>
-        <a href="#contacto" class="btn btn--solid final-cta__cta">Contactar</a>
+        <a href="#contacto" class="btn btn--solid final-cta__cta" data-i18n="cta.button">Contactar</a>
       </div>
     </section>
 
@@ -207,25 +211,25 @@
     <section id="contacto">
       <div class="container contact">
         <div class="contact-info" data-reveal>
-          <p class="eyebrow">Contacto</p>
-          <h2 class="editorial-heading">
+          <p class="eyebrow" data-i18n="contacto.eyebrow">Contacto</p>
+          <h2 class="editorial-heading" data-i18n-html="contacto.heading-html">
             <span class="editorial-heading__line editorial-heading__line--xs">Vamos falar sobre</span>
             <span class="editorial-heading__line editorial-heading__line--md">o vosso casamento</span>
           </h2>
-          <p class="section-lead">
-            <!-- PLACEHOLDER --> Respondo a todos os pedidos em até 48 horas. Contem-me a
+          <p class="section-lead" data-i18n="contacto.lead">
+            Respondo a todos os pedidos em até 48 horas. Contem-me a
             vossa data e o local — o resto tratamos juntos.
           </p>
 
           <div class="contact-info__item" style="margin-top: var(--space-xl);">
-            <p class="contact-info__label">E-mail</p>
+            <p class="contact-info__label" data-i18n="contacto.email-label">E-mail</p>
             <p class="contact-info__value">
               <a href="mailto:leandrosantosphotography@hotmail.com">leandrosantosphotography@hotmail.com</a>
             </p>
           </div>
           <div class="contact-info__item">
-            <p class="contact-info__label">Localização</p>
-            <p class="contact-info__value">Porto, Portugal — disponível para todo o país e destination weddings</p>
+            <p class="contact-info__label" data-i18n="contacto.location-label">Localização</p>
+            <p class="contact-info__value" data-i18n="contacto.location-value">Porto, Portugal — disponível para todo o país e destination weddings</p>
           </div>
 
           <div class="social-links">
@@ -236,12 +240,12 @@
         <form class="contact-form" id="contact-form" novalidate data-reveal data-reveal-delay="1">
           <div class="form-grid form-grid--2">
             <div class="field">
-              <label for="field-name">Nome do casal *</label>
+              <label for="field-name" data-i18n="form.name-label">Nome do casal *</label>
               <input type="text" id="field-name" name="name" autocomplete="name" required aria-required="true" aria-describedby="error-name" />
               <span class="field__error" id="error-name"></span>
             </div>
             <div class="field">
-              <label for="field-email">E-mail *</label>
+              <label for="field-email" data-i18n="form.email-label">E-mail *</label>
               <input type="email" id="field-email" name="email" autocomplete="email" required aria-required="true" aria-describedby="error-email" />
               <span class="field__error" id="error-email"></span>
             </div>
@@ -249,26 +253,26 @@
 
           <div class="form-grid form-grid--2" style="margin-top: var(--space-md);">
             <div class="field">
-              <label for="field-phone">Telefone (opcional)</label>
+              <label for="field-phone" data-i18n="form.phone-label">Telefone (opcional)</label>
               <input type="tel" id="field-phone" name="phone" autocomplete="tel" />
               <span class="field__error"></span>
             </div>
             <div class="field">
-              <label for="field-date">Data do casamento</label>
+              <label for="field-date" data-i18n="form.date-label">Data do casamento</label>
               <input type="date" id="field-date" name="wedding_date" />
               <span class="field__error"></span>
             </div>
           </div>
 
           <div class="field" style="margin-top: var(--space-md);">
-            <label for="field-venue">Local do casamento (opcional)</label>
-            <input type="text" id="field-venue" name="venue" placeholder="Ex.: Quinta, Porto" />
+            <label for="field-venue" data-i18n="form.venue-label">Local do casamento (opcional)</label>
+            <input type="text" id="field-venue" name="venue" placeholder="Ex.: Quinta, Porto" data-i18n-placeholder="form.venue-placeholder" />
             <span class="field__error"></span>
           </div>
 
           <div class="field" style="margin-top: var(--space-md);">
-            <label for="field-message">Mensagem</label>
-            <textarea id="field-message" name="message" rows="5" placeholder="Contem-nos um pouco sobre o vosso dia..."></textarea>
+            <label for="field-message" data-i18n="form.message-label">Mensagem</label>
+            <textarea id="field-message" name="message" rows="5" placeholder="Contem-nos um pouco sobre o vosso dia..." data-i18n-placeholder="form.message-placeholder"></textarea>
             <span class="field__error"></span>
           </div>
 
@@ -278,7 +282,7 @@
             <input type="text" id="field-honeypot" name="botcheck" tabindex="-1" autocomplete="off" />
           </div>
 
-          <button type="submit" class="btn btn--solid btn--full" id="form-submit" style="margin-top: var(--space-lg);">
+          <button type="submit" class="btn btn--solid btn--full" id="form-submit" style="margin-top: var(--space-lg);" data-i18n="form.submit">
             Enviar pedido
           </button>
 
@@ -291,10 +295,10 @@
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <p class="site-footer__brand">Leandro Santos Photography</p>
-      <p>&copy; <span id="footer-year">2026</span> Leandro Santos Photography. Todos os direitos reservados.</p>
+      <p>&copy; <span id="footer-year">2026</span> <span data-i18n="footer.copyright-suffix">Leandro Santos Photography. Todos os direitos reservados.</span></p>
       <div class="site-footer__links">
         <a href="https://www.instagram.com/leandrosantos.photo/" target="_blank" rel="noopener noreferrer">@leandrosantos.photo</a>
-        <a href="mailto:leandrosantosphotography@hotmail.com">E-mail</a>
+        <a href="mailto:leandrosantosphotography@hotmail.com" data-i18n="footer.email">E-mail</a>
       </div>
     </div>
   </footer>

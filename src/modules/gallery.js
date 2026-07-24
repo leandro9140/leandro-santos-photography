@@ -1,5 +1,6 @@
 import { portfolio } from '../data/portfolio.js';
 import { initLightbox } from './lightbox.js';
+import { t, onLangChange } from '../i18n.js';
 
 const PREVIEW_COUNT = 4;
 
@@ -12,20 +13,20 @@ function shuffle(list) {
   return result;
 }
 
-function renderFilters(container, onFilter) {
+function renderFilters(container, activeId, onFilter) {
   const buttons = [
-    { id: 'all', label: 'Todos' },
+    { id: 'all', label: t('gallery.all') },
     ...portfolio.map((w) => ({ id: w.id, label: w.couple })),
   ];
 
   container.innerHTML = buttons
     .map(
-      (btn, i) => `
+      (btn) => `
       <button
-        class="gallery-filter${i === 0 ? ' is-active' : ''}"
+        class="gallery-filter${btn.id === activeId ? ' is-active' : ''}"
         data-filter="${btn.id}"
         role="tab"
-        aria-selected="${i === 0 ? 'true' : 'false'}"
+        aria-selected="${btn.id === activeId ? 'true' : 'false'}"
       >${btn.label}</button>`
     )
     .join('');
@@ -65,7 +66,7 @@ function renderGallery(root, weddingId, lightbox, shuffledByWedding, expandedWed
           ${visible
             .map(
               (img, i) => `
-              <button class="gallery-item${i === 1 ? ' gallery-item--wide' : ''}" data-index="${i}" aria-label="Ver imagem: ${img.alt}">
+              <button class="gallery-item${i === 1 ? ' gallery-item--wide' : ''}" data-index="${i}" aria-label="${t('gallery.view-image')}: ${img.alt}">
                 <figure class="media-frame">
                   <img src="${img.src}" alt="${img.alt}" loading="lazy" />
                 </figure>
@@ -73,7 +74,7 @@ function renderGallery(root, weddingId, lightbox, shuffledByWedding, expandedWed
             )
             .join('')}
         </div>
-        ${!expanded && hasMore ? `<button class="gallery-more" data-wedding-more="${wedding.id}">Ver portefólio completo</button>` : ''}
+        ${!expanded && hasMore ? `<button class="gallery-more" data-wedding-more="${wedding.id}">${t('gallery.see-full')}</button>` : ''}
       </div>`;
     })
     .join('');
@@ -110,7 +111,18 @@ export function initGallery() {
   const lightbox = initLightbox();
   const shuffledByWedding = new Map(portfolio.map((wedding) => [wedding.id, shuffle(wedding.images)]));
   const expandedWeddings = new Set();
+  let activeFilter = 'all';
 
-  renderFilters(filtersEl, (filter) => renderGallery(root, filter, lightbox, shuffledByWedding, expandedWeddings));
-  renderGallery(root, 'all', lightbox, shuffledByWedding, expandedWeddings);
+  const setFilter = (filter) => {
+    activeFilter = filter;
+    renderGallery(root, filter, lightbox, shuffledByWedding, expandedWeddings);
+  };
+
+  renderFilters(filtersEl, activeFilter, setFilter);
+  renderGallery(root, activeFilter, lightbox, shuffledByWedding, expandedWeddings);
+
+  onLangChange(() => {
+    renderFilters(filtersEl, activeFilter, setFilter);
+    renderGallery(root, activeFilter, lightbox, shuffledByWedding, expandedWeddings);
+  });
 }
